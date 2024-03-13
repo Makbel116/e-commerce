@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//show the home page
+Route::get('/', [ItemController::class ,'index']);
 
-Route::get('/', function () {
-    return view('index');
-});
+//create items 
+
+Route::get('/item/create',[ItemController::class,'create']);
+
+//store items
+
+Route::post('/item',[ItemController::class,'store']);
