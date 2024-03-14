@@ -16,20 +16,15 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            // ALTER TABLE items MODIFY id CHAR(36);
-            // UPDATE items SET id = UUID();
-            // ALTER TABLE items MODIFY id CHAR(36) NOT NULL DEFAULT (UUID());
             $table->string('name');
             $table->decimal('price'); 
             $table->integer('rating')->default(5);//erase default
             $table->integer('amount');
-            $table->decimal('discount')->nullable(true); 
+            $table->integer('discount')->default(0)->nullable(false); 
             $table->longText('description');
             $table->string('status');
             $table->string('category');
             //image 
-            //category
-            //updated time
             $table->timestamps();
         });
          // Step 1: Alter the column to allow NULL values temporarily

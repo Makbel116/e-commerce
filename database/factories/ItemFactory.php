@@ -21,7 +21,7 @@ class ItemFactory extends Factory
             'price'=>$this->faker->numberBetween(0, 10000),
             'rating'=>$this->faker->numberBetween(1,5),
             'amount' =>$this->faker->numberBetween(0,100),
-            'discount' =>$this->faker->optional(0.3)->numberBetween(0, 10000) / 100.0,
+            'discount' =>$this->faker->optional(0.4)->numberBetween(100, 2000) / 100,
             'description' => $this->faker->sentence,
             'status' => $this->faker->randomElement(['new','used']),
             'category'=>implode(',',$categories),//to separate them with comma
