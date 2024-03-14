@@ -20,6 +20,7 @@ class CreateItemsTable extends Migration
             $table->decimal('price'); 
             $table->integer('rating')->default(5);//erase default
             $table->integer('amount');
+            $table->string('image')->nullable(true);
             $table->integer('discount')->default(0)->nullable(false); 
             $table->longText('description');
             $table->string('status');

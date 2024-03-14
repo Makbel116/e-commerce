@@ -25,6 +25,7 @@ class ItemController extends Controller
             'Description'=>'required',
             'amount'=> ['required', 'gt:0'],
             'status'=>'',
+            'image'=>'required',
             'category'=>['required','no_spaces'],
             'price'=>['required', 'gt:0'],
             'discount'=> [function ($attribute, $value, $fail) {
@@ -33,6 +34,9 @@ class ItemController extends Controller
                 }
             }]
         ]);
+        if($request->hasFile('image')){
+            $formfields['image']=$request->file('image')->store('itemImage','public');
+        }
         Item::create($formfields);
         return redirect('/')->with('message','created successfully!!!');
     }

@@ -7,7 +7,7 @@
         <div class="card-group" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
             @foreach ($items as $item)
                 <div class="card mx-4">
-                    <img src="images/clothes/designer-top.jpg" alt="{{ $item->name }}" class="card-img-top" />
+                    <img src=" {{$item->image? asset('storage/'.$item->image): asset('images/clothes/grey man\'s blazer.jpg') }}"    alt="{{ $item->name }}" class="card-img-top" />
                     <ul class="social">
                         <li>
                             <a href="#" data-tip="Quick View"><i class="fa fa-search"></i></a>
@@ -24,6 +24,7 @@
                         <span class="Discount-label">-{{ $item->discount }}%</span>
                     @endif
                     {{-- work o ratig --}}
+                    {{--make card costat i size--}}
                     <ul class="rating">
                         <li class="fa fa-star"></li>
                         <li class="fa fa-star"></li>
