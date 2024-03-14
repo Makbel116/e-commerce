@@ -3,22 +3,22 @@
     <div id="bottom-nav-bar" class="navbar desktop-menu">
       <ul>
         <li>
-          <a href="#" class="btn btn-outline-secondary" role="button"
+          <a href="/" class="btn btn-outline-secondary" role="button"
             >All products</a
           >
         </li>
         <li>
-          <a href="#" class="btn btn-outline-secondary" role="button"
+          <a href="/?tag=t-shirt" class="btn btn-outline-secondary" role="button"
             >t-shirts</a
           >
         </li>
         <li>
-          <a href="#" class="btn btn-outline-secondary" role="button"
+          <a href="/?tag=shoe" class="btn btn-outline-secondary" role="button"
             >shoes</a
           >
         </li>
         <li>
-          <a href="#" class="btn btn-outline-secondary" role="button"
+          <a href="/?tag=trouser" class="btn btn-outline-secondary" role="button"
             >trousers</a
           >
         </li>

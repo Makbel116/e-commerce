@@ -1,8 +1,8 @@
 @props(['items','listType','listId']);
 {{-- edit popular to latest  --}}
 <section id="{{$listType}}">
-    <h2 class="section-heading">Special Offers</h2>
-    <p class="section-description"></p>
+    {{-- <h2 class="section-heading">Special Offers</h2>
+    <p class="section-description"></p> --}}
     <div id="{{$listId}}">
         <div class="card-group" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
             @foreach ($items as $item)
@@ -38,6 +38,9 @@
                             <h4>{{ $item->name }}</h4>
                         </div>
                         <div class="card-text">
+                            {{-- <div>
+                                {{$item->category}}
+                            </div> --}}
                             <div class="price">{{ ($item->price)-(($item->price)*($item->discount/100) )}} birr
                                 @if ($item->discount !== 0)
                                 <span>{{$item->price}}</span>

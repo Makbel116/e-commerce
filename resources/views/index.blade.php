@@ -1,8 +1,9 @@
 <x-layout>
     @php
-        $Latest_items = \App\Models\Item::latest()->get();
+        $Latest_items = \App\Models\Item::latest()->filter(request(['tag','search']))->get();
         //change the toggle to pagination
-        $special_items = \App\Models\Item::where('discount','!=',0)->latest()->get();
+        $special_items = \App\Models\Item::where('discount','!=',0)->latest()->filter(request(['tag','search']))->get();
+
 
     @endphp
     @include('partials._hero')
