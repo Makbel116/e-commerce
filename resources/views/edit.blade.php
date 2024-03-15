@@ -22,11 +22,12 @@
                         </div>
                     </div>
                 </div>
-                <form class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12" action="/item" method="POST" enctype="multipart/form-data">
+                <form class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12" action="/item/{{$item->id}}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="card h-100">
                         <div class="card-body">
-                            <h1>Add a new Product</h1>
+                            <h1>Edit Your Product</h1>
                             <div class="row gutters">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <h6 class="mb-2 text-primary">Item Details</h6>
@@ -35,7 +36,7 @@
                                 <div class="form-group">
                                     <label for="Name">Product Name</label>
                                     <input type="text" class="form-control" id="Name" name="name"
-                                        value="{{ old('name') }}" placeholder="Eg. women's designer top">
+                                        value="{{ $item->name }}" placeholder="Eg. women's designer top">
                                 </div>
                                 @error('name')
                                     <p class="text-danger">{{ $message }}</p>
@@ -45,7 +46,7 @@
                                 <div class="form-group">
                                     <label for="Description">Description</label>
                                     <input type="text" class="form-control" id="Description" name="Description"
-                                        value="{{ old('Description') }}"
+                                        value="{{ $item->description }}"
                                         placeholder="Enter a short description of your product">
                                 </div>
                                 @error('Description')
@@ -56,7 +57,7 @@
                                 <div class="form-group">
                                     <label for="amount">Amount available</label>
                                     <input type="number" class="form-control" id="amount" name="amount"
-                                        value="{{ old('amount') }}" placeholder="Enter available amount of the product">
+                                        value="{{ $item->amount }}" placeholder="Enter available amount of the product">
                                 </div>
                                 @error('amount')
                                     <p class="text-danger">{{ $message }}</p>
@@ -73,7 +74,7 @@
                                 <div class="form-group">
                                     <label for="image">Provide your Image</label>
                                     <input type="file" class="form-control" id="image"
-                                        placeholder="Enter your image here" name="image" value="{{ old('image') }}">
+                                        placeholder="Enter your image here" name="image" value="{{ $item->image }}">
                                     @error('image')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
@@ -84,7 +85,7 @@
                                 <div class="form-group">
                                     <label for="category">Product Category (comma separated)</label>
                                     <input type="text" class="form-control" id="category" name="category"
-                                        value="{{ old('category') }}" placeholder="Eg. women's,t-shirt,new,top">
+                                        value="{{ $item->category}}" placeholder="Eg. women's,t-shirt,new,top">
                                 </div>
                                 @error('category')
                                     <p class="text-danger">{{ $message }}</p>
@@ -100,7 +101,7 @@
                             <div class="form-group">
                                 <label for="price">Price</label>
                                 <input type="number" class="form-control" id="price" name="price"
-                                    value="{{ old('price') }}" placeholder="Enter the price (in ETB)">
+                                    value="{{ $item->price }}" placeholder="Enter the price (in ETB)">
                             </div>
                             @error('price')
                                 <p class="text-danger">{{ $message }}</p>
@@ -110,7 +111,7 @@
                             <div class="form-group">
                                 <label for="Discount">Discount</label>
                                 <input type="number" class="form-control" id="Discount" name="discount"
-                                    value="{{ old('discount') }}"
+                                    value="{{ $item->discount }}"
                                     placeholder="Enter a Discount Percentage If there's any">
                             </div>
                             @error('discount')
@@ -121,7 +122,7 @@
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 my-4">
                                 <div class="text-right">
 
-                                    <button type="submit" id="submit" name="submit" class="btn btn-primary">Add
+                                    <button type="submit" id="submit" name="submit" class="btn btn-primary">Update
                                         Item</button>
                                 </div>
                             </div>

@@ -56,10 +56,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">add to wishlist</button>
-                    <button type="button" class="btn btn-primary">add to cart</button>
-                    <a role="button" href="/" class="btn btn-secondary" >Close</a>
+                <div class="modal-footer row">
+                    <div class="row">
+                        <div class="col-4 col-lg-3  m-0">
+                            <a href="/item/{{$item->id}}/edit" role="button" class="btn btn-warning "><i class="fa fa-pencil"></i> Edit</a>
+                            <form action="/item/{{$item->id}}" method="POST" class="m-0">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
+                                
+                            </form>
+                            
+                        </div>
+                    <div class="col-8 col-lg-4 mx-0">
+                        <button type="button" class="btn btn-primary"><i class="fa fa-shopping-bag"> </i> add to wishlist</button>
+                        <button type="button" class="btn btn-primary"> <i class="fa fa-shopping-cart"> </i> add to cart</button>
+                        <a role="button" href="/" class="btn btn-secondary" >Close</a>
+                    </div>
+                    </div>
+
                 </div>
             </div>
         </div>

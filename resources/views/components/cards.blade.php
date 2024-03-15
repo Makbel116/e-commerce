@@ -1,4 +1,4 @@
-@props(['items','listType','listId']);
+@props(['items','listType','listId'])
 {{-- edit popular to latest  --}}
 <section id="{{$listType}}">
     {{-- <h2 class="section-heading">Special Offers</h2>

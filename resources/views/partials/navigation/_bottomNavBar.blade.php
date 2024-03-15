@@ -5,7 +5,7 @@
     >
       <!-- logo image -->
       <div class="navbar-brand col-lg-3 col-md-3 col-sm-4">
-        <img src="../images/logo/logo.png" alt="logo image" id="logo-img" />
+        <img src="{{asset("images/logo/logo.png")}}" alt="logo image" id="logo-img" />
       </div>
       <!-- navbar-toggler for small devices -->
       <button

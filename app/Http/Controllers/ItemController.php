@@ -45,4 +45,34 @@ class ItemController extends Controller
     {
         return view('show', ['item' => $item]);
     }
+
+    public function edit(Item $item){
+        return view ('edit',['item'=> $item]);
+    }
+    public function update(Request $request,Item $item){
+        $formfields=$request->validate([
+            'name'=>'required',
+            'Description'=>'required',
+            'amount'=> ['required', 'gt:0'],
+            'status'=>'',
+            'image'=>'',
+            'category'=>['required','no_spaces'],
+            'price'=>['required', 'gt:0'],
+            'discount'=> [function ($attribute, $value, $fail) {
+                if ($value < 0) {
+                    $fail($attribute . ' must be greater than 0.');
+                }
+            }]
+        ]);
+        if($request->hasFile('image')){
+            $formfields['image']=$request->file('image')->store('itemImage','public');
+        }
+        $item->update($formfields);
+        return redirect('/')->with('message','updated successfully!!!');
+    }
+
+    public function destroy(Item $item){ 
+        $item->delete();
+        return redirect('/')->with('message','deleted successfully!!!');
+    }
 }

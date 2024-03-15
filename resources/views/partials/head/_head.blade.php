@@ -12,12 +12,13 @@
     {{-- loading alpinejs --}}
     <script src="//unpkg.com/alpinejs" defer></script>
     <!-- loading the css file -->
-    <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/show.css" />
+    <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('css/show.css')}}" />
     <!-- loading the font-awesome icos  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <!-- loading google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+
 </head>
