@@ -40,4 +40,9 @@ class ItemController extends Controller
         Item::create($formfields);
         return redirect('/')->with('message','created successfully!!!');
     }
+
+    public function show(Item $item)
+    {
+        return view('show', ['item' => $item]);
+    }
 }

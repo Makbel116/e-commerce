@@ -4,13 +4,13 @@
     {{-- <h2 class="section-heading">Special Offers</h2>
     <p class="section-description"></p> --}}
     <div id="{{$listId}}">
-        <div class="card-group" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
+        <div class="card-group card-deck" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
             @foreach ($items as $item)
                 <div class="card mx-4">
                     <img src=" {{$item->image? asset('storage/'.$item->image): asset('images/clothes/grey man\'s blazer.jpg') }}"    alt="{{ $item->name }}" class="card-img-top" />
                     <ul class="social">
                         <li>
-                            <a href="#" data-tip="Quick View"><i class="fa fa-search"></i></a>
+                            <a href="/item/{{$item->id}}"  data-tip="Quick View"><i class="fa fa-search"></i></a>
                         </li>
                         <li>
                             <a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a>
@@ -38,9 +38,6 @@
                             <h4>{{ $item->name }}</h4>
                         </div>
                         <div class="card-text">
-                            {{-- <div>
-                                {{$item->category}}
-                            </div> --}}
                             <div class="price">{{ ($item->price)-(($item->price)*($item->discount/100) )}} birr
                                 @if ($item->discount !== 0)
                                 <span>{{$item->price}}</span>
@@ -61,3 +58,4 @@
             <i class="fa fa-chevron-right" aria-hidden="true"></i>
         </button>
 </section>
+

@@ -15,7 +15,8 @@ class CreateItemsTable extends Migration
     public function up()
     {
         Schema::create('items', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->id();
+            // $table->uuid('id')->primary();
             $table->string('name');
             $table->decimal('price'); 
             $table->integer('rating')->default(5);//erase default
@@ -28,14 +29,14 @@ class CreateItemsTable extends Migration
             //image 
             $table->timestamps();
         });
-         // Step 1: Alter the column to allow NULL values temporarily
-         DB::statement('ALTER TABLE items MODIFY id CHAR(36)');
+        //  // Step 1: Alter the column to allow NULL values temporarily
+        //  DB::statement('ALTER TABLE items MODIFY id CHAR(36)');
 
-         // Step 2: Update existing rows with UUID values
-         DB::statement('UPDATE items SET id = UUID();');
+        //  // Step 2: Update existing rows with UUID values
+        //  DB::statement('UPDATE items SET id = UUID();');
  
-         // Step 3: Alter the column to make it NOT NULL and set the default value to UUID()
-         DB::statement('ALTER TABLE items MODIFY id CHAR(36) NOT NULL DEFAULT (UUID())');
+        //  // Step 3: Alter the column to make it NOT NULL and set the default value to UUID()
+        //  DB::statement('ALTER TABLE items MODIFY id CHAR(36) NOT NULL DEFAULT (UUID())');
     }
 
     /**

@@ -23,3 +23,7 @@ Route::get('/item/create',[ItemController::class,'create']);
 //store items
 
 Route::post('/item',[ItemController::class,'store']);
+
+//view items
+
+Route::get('/item/{item}',[ItemController::class,'show']);
