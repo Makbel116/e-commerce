@@ -14,6 +14,7 @@
     <!-- loading the css file -->
     <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('css/show.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('css/register.css')}}" />
     <!-- loading the font-awesome icos  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <!-- loading google fonts -->

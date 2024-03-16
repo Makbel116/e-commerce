@@ -12,11 +12,11 @@ class ItemController extends Controller
 {
     //to show the home page
     public function index() {
-        return view('index');
+        return view('item.index');
     }
 
     public function create(){
-        return view('create');
+        return view('item.create');
     }
 
     public function store(Request $request){
@@ -43,11 +43,11 @@ class ItemController extends Controller
 
     public function show(Item $item)
     {
-        return view('show', ['item' => $item]);
+        return view('item.show', ['item' => $item]);
     }
 
     public function edit(Item $item){
-        return view ('edit',['item'=> $item]);
+        return view ('item.edit',['item'=> $item]);
     }
     public function update(Request $request,Item $item){
         $formfields=$request->validate([

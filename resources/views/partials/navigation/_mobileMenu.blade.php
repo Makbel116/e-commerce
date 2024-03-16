@@ -22,8 +22,8 @@
     </li>
   </ul>
   <div class="col-sm-12 buttons" id="login-signup">
-    <a href="#" role="button" class="btn btn-success">Sign up</a>
-    <a href="#" role="button" class="btn btn-outline-success"
+    <a href="/register" role="button" class="btn btn-success">Sign up</a>
+    <a href="/login" role="button" class="btn btn-outline-success"
       >Log in</a
     >
   </div>

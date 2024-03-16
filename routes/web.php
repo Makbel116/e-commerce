@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,3 +39,25 @@ Route::put('/item/{item}',[ItemController::class,'update']);
 
 //delete item
 Route::delete('/item/{item}',[ItemController::class,'destroy']);
+
+
+//register for user
+Route::get('/register',[UserController::class,'create']);
+
+//to store a user
+
+Route::post("/users",[UserController::class,'store']);
+
+
+//to log out a user
+
+Route::post("/logout",[UserController::class,'logout']);
+
+//to login a user
+
+Route::get("/login",[UserController::class,'login']);
+
+
+///user authentcation
+
+Route::post("/user/authentcation",[UserController::class,'authentcation']);

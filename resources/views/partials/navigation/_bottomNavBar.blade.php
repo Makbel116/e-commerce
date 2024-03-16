@@ -25,11 +25,22 @@
       </div>
       <!-- login signup buttons for the desktop -->
       <div class="col-lg-2 col-md-3 desktop-menu buttons">
-        <a href="#" role="button" class="btn btn-success">Sign up</a>
-        <a href="#" role="button" class="btn btn-outline-success"
+      @auth
+          
+        <a href="/register" role="button" class="btn btn-success p-1">manage credentials</a>
+        <form action="/logout" method="POST">
+          @csrf
+          <button  type="submit" role="button" class="btn btn-outline-success"
+            >Log out</button
+          >
+        </form>
+      @else
+        <a href="/register" role="button" class="btn btn-success">Sign up</a>
+        <a href="/login" role="button" class="btn btn-outline-success"
           >Log in</a
         >
       </div>
+      @endauth
     </div>
   </div>
   <!-- bottom navigation bar -->
