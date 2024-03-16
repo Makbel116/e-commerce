@@ -39,8 +39,8 @@
         <a href="/login" role="button" class="btn btn-outline-success"
           >Log in</a
         >
+        @endauth
       </div>
-      @endauth
     </div>
   </div>
   <!-- bottom navigation bar -->

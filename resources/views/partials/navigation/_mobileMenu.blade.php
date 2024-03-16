@@ -22,8 +22,20 @@
     </li>
   </ul>
   <div class="col-sm-12 buttons" id="login-signup">
-    <a href="/register" role="button" class="btn btn-success">Sign up</a>
-    <a href="/login" role="button" class="btn btn-outline-success"
-      >Log in</a
+  @auth
+          
+  <a href="/register" role="button" class="btn btn-success p-1">manage credentials</a>
+  <form action="/logout" method="POST">
+    @csrf
+    <button  type="submit" role="button" class="btn btn-outline-success"
+      >Log out</button
     >
-  </div>
+  </form>
+@else
+<div class="col-sm-12 buttons" id="login-signup">
+  <a href="/register" role="button" class="btn btn-success">Sign up</a>
+  <a href="/login" role="button" class="btn btn-outline-success"
+    >Log in</a
+  >
+  @endauth
+</div>
