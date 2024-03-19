@@ -37,6 +37,7 @@ class ItemController extends Controller
         if($request->hasFile('image')){
             $formfields['image']=$request->file('image')->store('itemImage','public');
         }
+        $formfields['user_id']=auth()->id();
         Item::create($formfields);
         return redirect('/')->with('message','created successfully!!!');
     }
@@ -67,6 +68,7 @@ class ItemController extends Controller
         if($request->hasFile('image')){
             $formfields['image']=$request->file('image')->store('itemImage','public');
         }
+        
         $item->update($formfields);
         return redirect('/')->with('message','updated successfully!!!');
     }

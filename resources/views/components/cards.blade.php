@@ -1,8 +1,12 @@
 @props(['items','listType','listId'])
 {{-- edit popular to latest  --}}
 <section id="{{$listType}}">
-    {{-- <h2 class="section-heading">Special Offers</h2>
-    <p class="section-description"></p> --}}
+    <h2 class="section-heading">@if ($listType=="popular-products")
+        Latest products
+    @else
+        Special offers
+    @endif</h2>
+    {{-- <p class="section-description"></p> --}}
     <div id="{{$listId}}">
         <div class="card-group card-deck" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
             @foreach ($items as $item)

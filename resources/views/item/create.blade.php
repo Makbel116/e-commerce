@@ -8,15 +8,15 @@
                         <div class="account-settings">
                             <div class="user-profile">
                                 <div class="user-avatar">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
+                                    {{-- <img src="{{Auth::user()->profile_picture?Auth::user()->profile_picture:"https://bootdey.com/img/Content/avatar/avatar7.png"}}" alt="Maxwell Admin"> --}}
                                 </div>
-                                <h5 class="user-name">Yuki Hayashi</h5>
-                                <h6 class="user-email">yuki@Maxwell.com</h6>
+                                
+                                <h5 class="user-name">{{Auth::user()->name}}</h5>
+                                <h6 class="user-email">{{Auth::user()->email}}</h6>
                             </div>
                             <div class="about">
                                 <h5>About</h5>
-                                <p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human
-                                    experiences.</p>
+                                <p>{{Auth::user()->about}}</p>
                                 </div>
                             </div>
                         </div>

@@ -4,12 +4,12 @@
 
 <div class="register-ody">
 
-    <form class="form-signin" method="POST" action="/users">
+    <form class="form-signin" method="POST" action="/users" enctype="multipart/form-data">
         @csrf
         <img class="mb-4" src="{{ asset('images/logo/logo.png') }}" alt="logo image" width="208" height="96">
         <h1 class="h3 mb-3 font-weight-normal">Please sign Up</h1>
         <label for="inputEmail">Email address</label>
-        <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" 
+        <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address"  value="{{ old('email') }}"
             autofocus>
         @error('email')
             <p class="text-danger">{{ $message }}</p>
@@ -87,6 +87,6 @@
         @enderror
 
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
     </form>
 </div>

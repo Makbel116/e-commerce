@@ -18,6 +18,7 @@ class CreateItemsTable extends Migration
             $table->id();
             // $table->uuid('id')->primary();
             $table->string('name');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->decimal('price'); 
             $table->integer('rating')->default(5);//erase default
             $table->integer('amount');
